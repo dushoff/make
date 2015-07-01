@@ -8,7 +8,7 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 # local.mk is not a source!
 
-Sources = Makefile default.mk gnome.mk linux.mk windows.mk Makefile.generic
+Sources = Makefile default.mk gnome.mk linux.mk windows.mk
 
 ##################################################################
 
