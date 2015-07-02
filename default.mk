@@ -23,7 +23,7 @@ autocommit: autocomment.txt add
 	git commit -F $<
 
 autocomment.txt:
-	gvim -f $@
+	echo "Autocommit" > $@
 
 forget:
 	git reset --hard
