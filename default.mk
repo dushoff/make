@@ -7,15 +7,26 @@ add: $(Sources)
 push: commit
 	git push
 
-pull: 
+pull: commit
 	git pull
-
-forget:
-	git reset --hard
 
 commit: add
 	git commit
 
+autopush: autocommit
+	git push
+
+autopull: autocommit
+	git pull
+
+autocommit: autocomment.txt add
+	git commit -F $<
+
+autocomment.txt:
+	gvim -f $@
+
+forget:
+	git reset --hard
 
 ######################################################################
 
