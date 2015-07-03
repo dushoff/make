@@ -7,7 +7,8 @@ add: $(Sources)
 push: commit
 	git push
 
-pull: commit
+pull: 
+	-$(MAKE) commit
 	git pull
 
 commit: add
