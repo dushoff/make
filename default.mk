@@ -7,12 +7,8 @@ add: $(Sources)
 push: commit.time
 	git push
 
-pull: 
-	-$(MAKE) commit
+pull: commit.time
 	git pull
-
-commit: add
-	git commit
 
 commit.time: $(Sources)
 	$(MAKE) add
@@ -24,19 +20,6 @@ gitcomment.txt: $(Sources)
 	echo Autocommit > $@
 	git commit --dry-run >> $@
 	gvim -f gitcomment.txt
-
-autopush: autocommit
-	git push
-
-autopull: 
-	$(MAKE) $autocommit
-	git pull
-
-autocommit: autocomment.txt add
-	git commit -F $<
-
-autocomment.txt:
-	echo "Autocommit" > $@
 
 forget:
 	git reset --hard
