@@ -4,7 +4,7 @@
 add: $(Sources)
 	git add $(Sources)
 
-push: commit
+push: commit.time
 	git push
 
 pull: 
@@ -13,6 +13,16 @@ pull:
 
 commit: add
 	git commit
+
+commit.time: $(Sources)
+	$(MAKE) add
+	$(MAKE) gitcomment.txt
+	git commit -F gitcomment.txt
+
+gitcomment.txt: $(Sources)
+	echo Autocommit > $@
+	git commit --dry-run >> $@
+	gvim -f gitcomment.txt
 
 autopush: autocommit
 	git push
