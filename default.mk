@@ -17,7 +17,8 @@ commit: add
 autopush: autocommit
 	git push
 
-autopull: autocommit
+autopull: 
+	$(MAKE) $autocommit
 	git pull
 
 autocommit: autocomment.txt add
