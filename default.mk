@@ -18,6 +18,7 @@ commit.time: $(Sources)
 	$(MAKE) add
 	$(MAKE) gitcomment.txt
 	git commit -F gitcomment.txt
+	date > $@
 
 gitcomment.txt: $(Sources)
 	echo Autocommit > $@
