@@ -4,6 +4,9 @@
 add: $(Sources)
 	git add $(Sources)
 
+pushonly:
+	git push
+
 push: commit
 	git push
 
