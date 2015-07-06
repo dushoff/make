@@ -4,31 +4,22 @@
 add: $(Sources)
 	git add $(Sources)
 
-pushonly:
+push: commit.time
 	git push
 
-push: commit
-	git push
-
-pull: 
-	-$(MAKE) commit
+pull: commit.time
 	git pull
 
-commit: add
-	git commit
+commit.time: $(Sources)
+	$(MAKE) add
+	$(MAKE) gitcomment.txt
+	git commit -F gitcomment.txt
+	date > $@
 
-autopush: autocommit
-	git push
-
-autopull: 
-	$(MAKE) $autocommit
-	git pull
-
-autocommit: autocomment.txt add
-	git commit -F $<
-
-autocomment.txt:
-	echo "Autocommit" > $@
+gitcomment.txt: $(Sources)
+	echo Autocommit > $@
+	git commit --dry-run >> $@
+	gvim -f gitcomment.txt
 
 forget:
 	git reset --hard
