@@ -8,13 +8,13 @@ repo = git@github.com:dushoff
 
 # make files
 
-# local.mk is not a source file, but you probably want to make one
+md = ../make/
 
 Sources = Makefile default.mk gnome.mk linux.mk windows.mk Makefile.generic
 
 ##################################################################
 
 local = default
--include ../make/local.mk
-include ../make/$(local).mk
+-include $(md)/local.mk
+include $(md)/$(local).mk
 

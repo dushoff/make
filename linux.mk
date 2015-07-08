@@ -1,4 +1,4 @@
-include default.mk
+include $(md)/default.mk
 
 %.go:
 	$(MAKE) $*
