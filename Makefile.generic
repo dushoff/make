@@ -9,7 +9,7 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 md = ../make/
 
-# local.mk should not be a source file; use it so reset the value of the variable local
+# local.mk should not be a source file; use it to reset the value of the variable local
 
 Sources = Makefile 
 
