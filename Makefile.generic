@@ -12,8 +12,10 @@ Sources = Makefile
 ##################################################################
 
 md = ../make/
+rrd = ../RR/
 
 local = default
 -include $(md)/local.mk
-include $(md)/$(local).mk
+-include $(md)/$(local).mk
+-include $(rrd)/inc.mk
 
