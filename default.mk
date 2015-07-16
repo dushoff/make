@@ -11,10 +11,10 @@ pull: commit.time
 	git pull
 
 commit.time: $(Sources)
+	date > $@
 	$(MAKE) add
 	$(MAKE) gitcomment.txt
 	git commit -F gitcomment.txt
-	date > $@
 
 gitcomment.txt: $(Sources)
 	echo Autocommit > $@
