@@ -9,6 +9,7 @@ push: commit.time
 
 pull: commit.time
 	git pull
+	$(touch) $<
 
 commit.time: $(Sources)
 	date > $@
