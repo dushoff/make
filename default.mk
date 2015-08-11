@@ -16,11 +16,15 @@ commit.time: $(Sources)
 	$(MAKE) add
 	$(MAKE) gitcomment.txt
 	git commit -F gitcomment.txt
+	date > $@
 
 gitcomment.txt: $(Sources)
 	echo Autocommit > $@
 	git commit --dry-run >> $@
 	gvim -f gitcomment.txt
+
+remove:
+	git rm $(remove)
 
 forget:
 	git reset --hard
