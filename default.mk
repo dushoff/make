@@ -5,7 +5,7 @@ add: $(Sources)
 	git add $(Sources)
 
 push: commit.time
-	git push
+	git push -u origin master
 	date > $<
 
 pull: commit.time
