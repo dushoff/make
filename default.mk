@@ -6,10 +6,11 @@ add: $(Sources)
 
 push: commit.time
 	git push
+	date > $<
 
 pull: commit.time
 	git pull
-	touch $<
+	date > $<
 
 commit.time: $(Sources)
 	date > $@
