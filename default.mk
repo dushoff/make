@@ -4,8 +4,11 @@
 add: $(Sources)
 	git add $(Sources)
 
-push: commit.time
+newpush: commit.time
 	git push -u origin master
+
+push: commit.time
+	git push
 
 pull: commit.time
 	git pull
