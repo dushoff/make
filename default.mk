@@ -9,7 +9,6 @@ push: commit.time
 
 pull: commit.time
 	git pull
-	date > $<
 
 commit.time: $(Sources)
 	date > $@
